@@ -1,9 +1,10 @@
 FROM alpine:edge
 
-RUN \
-apk add --no-cache mongodb && \
-rm /usr/bin/mongoperf
+RUN apk add --update \
+		mongodb mongodb-tools \
+		&& rm -rf /var/cache/apk/*
 
+ADD src/ /src
 VOLUME /data/db
 EXPOSE 27017 28017
 
