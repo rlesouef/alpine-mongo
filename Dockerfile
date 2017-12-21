@@ -1,8 +1,8 @@
 FROM alpine:edge
 
 RUN apk add --update \
-		mongodb mongodb-tools \
-		&& rm -rf /var/cache/apk/*
+mongodb mongodb-tools \
+&& rm -rf /var/cache/apk/*
 
 ADD src/ /src
 VOLUME /data/db
