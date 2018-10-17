@@ -21,29 +21,28 @@ To re-build this image from the dockerfile:
 
 To run `mongod`:
 
-	$ docker run -d --name mongo -p 27017:27017 rlesouef/alpine-mongo
+	$ docker run -d --name mymongo -p 27017:27017 rlesouef/alpine-mongo
 
 You can also specify the database repository where to store the data
 with the volume -v option:
 
-    $ docker run -d --name mongo -p 27017:27017 \
-	  -v /somewhere/onmyhost/mydatabase:/data/db \
+    $ docker run -d --name mymongo -p 27017:27017 \
+	  -v /host/mydb:/data/db \
 	  rlesouef/alpine-mongo
 
 To run a shell session:
 
-    $ docker exec -ti mongo sh
+    $ docker exec -ti mymongo sh
 
 To use the mongo shell client:
 
-	$ docker exec -ti mongo mongo
+	$ docker exec -ti mymongo mongo
 
 The mongo shell client can also be run its own container: 
 
-	$ docker run -ti --rm --name mongoshell monogo host:port/db
+	$ docker run -ti --rm --name mongoshell mymongo host:port/db
 
 ## Limitations
 
-- On MacOSX, volumes located in a virtualbox shared folder are not
-  supported, due to a limitation of virtualbox (default docker-machine
+- On MacOSX, volumes located in a virtualbox shared folder are not supported, due to a limitation of virtualbox (default docker-machine
   driver) not supporting fsync().
