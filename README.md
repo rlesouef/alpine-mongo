@@ -1,7 +1,7 @@
 # docker-alpine-mongo
 
-This repository contains Dockerfile for [MongoDB 3.4](https://www.mongodb.org)
-container, based on the [Alpine edge](https://hub.docker.com/_/alpine/) image.
+This repository contains Dockerfile for [MongoDB](https://www.mongodb.org)
+container, based on the [Alpine](https://hub.docker.com/_/alpine/) image.
 
 Why ? the official mongo image size: 360 MB, alpine-mongo: 106 MB
 
